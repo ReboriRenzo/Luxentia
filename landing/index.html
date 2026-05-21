@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Luxentia Travel — Experiencias de viaje exclusivas y personalizadas."
+    />
+    <title>Luxentia Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="assets/luxentia-logo.png" type="image/png" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav" aria-label="Principal">
+        <a href="#" class="nav__brand" aria-label="Luxentia Travel — Inicio">
+          <img
+            src="assets/luxentia-logo.png"
+            alt="Luxentia Travel"
+            class="nav__logo"
+            width="220"
+            height="68"
+          />
+        </a>
+
+        <button
+          type="button"
+          class="nav__toggle"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          aria-label="Abrir menú"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__links">
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#experiencias">Experiencias</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+          </ul>
+          <a href="#contacto" class="nav__cta">Contáctanos</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-label="Inicio">
+        <div class="hero__media" aria-hidden="true">
+          <img
+            class="hero__image"
+            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            fetchpriority="high"
+          />
+          <div class="hero__overlay"></div>
+        </div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow anim-fade-up" style="--delay: 0.1s">
+            Viajes de lujo a medida
+          </p>
+          <h1 class="hero__title anim-fade-up" style="--delay: 0.25s">
+            Luxentia <span class="hero__title-accent">Travel</span>
+          </h1>
+          <p class="hero__subtitle anim-fade-up" style="--delay: 0.45s">
+            Conectamos tu destino soñado con experiencias únicas e
+            inolvidables
+          </p>
+          <div class="hero__actions anim-fade-up" style="--delay: 0.65s">
+            <a href="#experiencias" class="hero__btn hero__btn--primary"
+              >Descubre experiencias</a
+            >
+            <a href="#contacto" class="hero__btn hero__btn--outline"
+              >Planifica tu viaje</a
+            >
+          </div>
+        </div>
+
+        <a href="#experiencias" class="hero__badge anim-fade-up" style="--delay: 0.9s">
+          <span class="hero__badge-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>Experiencias premium personalizadas</span>
+        </a>
+
+        <div class="hero__scroll-hint anim-fade-up" style="--delay: 1.1s" aria-hidden="true">
+          <span class="hero__scroll-line"></span>
+        </div>
+      </section>
+
+      <section class="about" id="nosotros" aria-labelledby="about-title">
+        <div class="about__bg" aria-hidden="true"></div>
+
+        <div class="about__stage">
+          <!-- Tarjetas flotantes -->
+          <article class="about__float about__float--tl reveal">
+            <div class="about__stat-card about__stat-card--gray">
+              <strong class="about__stat-num">+15</strong>
+              <span class="about__stat-label">Años creando viajes memorables</span>
+            </div>
+            <a href="#destinos" class="about__pill">
+              <span class="about__pill-icon" aria-hidden="true">→</span>
+              <span>Maldivas en pareja</span>
+            </a>
+          </article>
+
+          <article class="about__float about__float--tr reveal">
+            <div class="about__stat-card about__stat-card--lavender">
+              <strong class="about__stat-num">120+</strong>
+              <span class="about__stat-label">Destinos exclusivos en el mundo</span>
+            </div>
+            <a href="#destinos" class="about__pill">
+              <span>Escapada por Europa</span>
+            </a>
+          </article>
+
+          <article class="about__float about__float--bl reveal">
+            <div class="about__stat-card about__stat-card--blue">
+              <strong class="about__stat-num">98%</strong>
+              <span class="about__stat-label">Clientes que nos recomiendan</span>
+            </div>
+            <a href="#experiencias" class="about__pill">
+              <span>Viaje en familia a medida</span>
+            </a>
+          </article>
+
+          <article class="about__float about__float--br reveal">
+            <div class="about__photo-card">
+              <img
+                src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=400&q=80"
+                alt="Destino de viaje"
+                width="200"
+                height="140"
+                loading="lazy"
+              />
+              <div class="about__photo-badge">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span><strong>+500</strong> Itinerarios diseñados</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Contenido central -->
+          <div class="about__center reveal">
+            <div class="about__logo-badge">
+              <img
+                src="assets/luxentia-logo.png"
+                alt=""
+                width="56"
+                height="56"
+              />
+            </div>
+            <h2 id="about-title" class="about__title">
+              Sobre <span class="about__title-accent">Luxentia Travel</span>
+            </h2>
+            <p class="about__subtitle">
+              Una agencia pensada para quienes buscan viajar distinto
+            </p>
+            <p class="about__text">
+              En Luxentia Travel diseñamos cada viaje como una experiencia única.
+              Nuestro equipo de asesores especializados combina destinos
+              exclusivos, atención personalizada y logística impecable para que
+              solo te ocupes de disfrutar. Desde escapadas románticas hasta
+              grandes aventuras en familia, creamos el itinerario perfecto para
+              ti.
+            </p>
+            <a href="#contacto" class="about__cta">
+              <span class="about__cta-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 12h14M13 6l6 6-6 6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span>Conoce nuestra agencia</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips" id="experiencias" aria-labelledby="tips-title">
+        <div class="tips__media" aria-hidden="true">
+          <img
+            class="tips__image"
+            src="https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=2400&q=80"
+            alt=""
+            loading="lazy"
+          />
+          <div class="tips__overlay"></div>
+        </div>
+
+        <div class="tips__inner">
+          <header class="tips__header reveal">
+            <h2 id="tips-title" class="tips__title">
+              Tips esenciales para tu viaje
+            </h2>
+            <p class="tips__subtitle">
+              Prepárate con confianza y disfruta cada momento sin imprevistos
+            </p>
+          </header>
+
+          <div class="tips__grid">
+            <article class="tips__card tips__card--stagger-1 reveal">
+              <span class="tips__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9 12h6M12 9v6M7 4h10a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M9 2v2M15 2v2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="tips__card-title">Planifica con tiempo</h3>
+              <p class="tips__card-text">
+                Reserva vuelos y alojamiento con anticipación para mejores
+                tarifas y disponibilidad en destinos de alta demanda.
+              </p>
+              <a href="#contacto" class="tips__card-btn">
+                <span class="tips__card-btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Anticipación</span>
+              </a>
+            </article>
+
+            <article class="tips__card tips__card--stagger-2 reveal">
+              <span class="tips__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="5"
+                    y="3"
+                    width="14"
+                    height="18"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M9 7h6M9 11h6M9 15h4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="tips__card-title">Documentación al día</h3>
+              <p class="tips__card-text">
+                Verifica pasaporte, visados y requisitos sanitarios del destino
+                con al menos 8 semanas de margen antes de salir.
+              </p>
+              <a href="#contacto" class="tips__card-btn">
+                <span class="tips__card-btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Documentos</span>
+              </a>
+            </article>
+
+            <article class="tips__card tips__card--stagger-3 reveal">
+              <span class="tips__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9 12l2 2 4-4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="tips__card-title">Viaja protegido</h3>
+              <p class="tips__card-text">
+                Un seguro de viaje adecuado cubre imprevistos médicos,
+                cancelaciones y equipaje. Te ayudamos a elegir el plan ideal.
+              </p>
+              <a href="#contacto" class="tips__card-btn">
+                <span class="tips__card-btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Seguro</span>
+              </a>
+            </article>
+
+            <article class="tips__card tips__card--stagger-4 reveal">
+              <span class="tips__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="3"
+                    y="6"
+                    width="18"
+                    height="13"
+                    rx="2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M3 10h18M8 6V4a1 1 0 011-1h6a1 1 0 011 1v2"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h3 class="tips__card-title">Equipaje inteligente</h3>
+              <p class="tips__card-text">
+                Empaca ligero según el clima del destino y revisa las políticas
+                de equipaje de tu aerolínea para evitar cargos extra.
+              </p>
+              <a href="#contacto" class="tips__card-btn">
+                <span class="tips__card-btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M5 12h14M13 6l6 6-6 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Equipaje</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
