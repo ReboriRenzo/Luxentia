@@ -17,14 +17,18 @@
   function closeMenu() {
     navToggle?.classList.remove("is-open");
     navMenu?.classList.remove("is-open");
+    header?.classList.remove("is-menu-open");
     navToggle?.setAttribute("aria-expanded", "false");
+    navToggle?.setAttribute("aria-label", "Abrir menú");
     document.body.style.overflow = "";
   }
 
   navToggle?.addEventListener("click", () => {
     const open = navMenu?.classList.toggle("is-open");
     navToggle.classList.toggle("is-open", open);
+    header?.classList.toggle("is-menu-open", !!open);
     navToggle.setAttribute("aria-expanded", String(!!open));
+    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
     document.body.style.overflow = open ? "hidden" : "";
   });
 
@@ -169,6 +173,8 @@
   }
 
   /* ——— Categorías de viaje ——— */
+  const TAGS_HINT = "Lo más común · consultanos por más destinos";
+
   const CATEGORIES = [
     {
       id: "playa",
@@ -182,8 +188,7 @@
       id: "exoticos",
       name: "Exóticos",
       desc: "Destinos fuera de lo común con culturas fascinantes, paisajes únicos y experiencias que transforman.",
-      image:
-        "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/carrusel/Exotico.jpg",
       tags: ["Safari", "Islas remotas", "Selva", "Auroras"],
       cta: "Consultar viajes exóticos",
     },
@@ -193,7 +198,7 @@
       desc: "Templos milenarios, gastronomía de clase mundial y metrópolis futuristas en un solo continente.",
       image:
         "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
-      tags: ["Japón", "Tailandia", "Bali", "Vietnam"],
+      tags: ["Japón", "China", "Tailandia", "Bali"],
       cta: "Consultar viajes a Asia",
     },
     {
@@ -201,7 +206,7 @@
       name: "Europa",
       desc: "Arte, historia y elegancia. Recorridos a medida por las ciudades y paisajes más icónicos del viejo continente.",
       image: "assets/carrusel/Europa.jpg",
-      tags: ["París", "Italia", "Grecia", "Alpes"],
+      tags: ["Ciudades históricas", "Gastronomía", "Arte y cultura", "Paisajes"],
       cta: "Consultar viajes a Europa",
     },
     {
@@ -250,8 +255,7 @@
       id: "latam",
       name: "Destinos Latam",
       desc: "América Latina en su máxima expresión: playas, montañas, cultura viva y gastronomía inigualable.",
-      image:
-        "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/carrusel/LATAM.png",
       tags: ["Perú", "Colombia", "Chile", "Brasil"],
       cta: "Consultar destinos Latam",
     },
@@ -314,6 +318,10 @@
         span.textContent = tag;
         tags.appendChild(span);
       });
+      const hint = document.createElement("span");
+      hint.className = "cat-item__tags-hint";
+      hint.textContent = TAGS_HINT;
+      tags.appendChild(hint);
       body.appendChild(tags);
 
       const cta = document.createElement("a");

@@ -77,6 +77,12 @@ ul {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
 }
 
+.header.is-menu-open {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -528,7 +534,7 @@ ul {
 @keyframes nav-in {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -1399,19 +1405,42 @@ ul {
 
 /* ——— Responsive ——— */
 @media (max-width: 900px) {
+  .header {
+    z-index: 9999;
+  }
+
+  .nav__logo {
+    height: 3rem;
+    max-width: 8.5rem;
+  }
+
   .nav__toggle {
     display: flex;
+    position: relative;
+    z-index: 10002;
+  }
+
+  .nav__brand {
+    z-index: 10002;
   }
 
   .nav__menu {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 10000;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2.5rem;
-    background: rgba(10, 10, 10, 0.97);
-    backdrop-filter: blur(16px);
-    padding: 2rem;
+    align-items: center;
+    gap: 0;
+    background: #060a10;
+    padding: calc(var(--nav-height) + 2rem) 2rem 2rem;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -1428,22 +1457,80 @@ ul {
 
   .nav__links {
     flex-direction: column;
-    gap: 1.75rem;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .nav__links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .nav__links a {
-    font-size: 1.25rem;
+    display: block;
+    padding: 1.1rem 0;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .nav__links a::after {
+    display: none;
+  }
+
+  .nav__cta {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 20rem;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .hero {
+    padding: calc(var(--nav-height) + 1.5rem) 1rem 4rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 9vw, 2.75rem);
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__btn {
+    width: 100%;
   }
 
   .hero__strip {
     margin-top: 2.5rem;
     border-radius: 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    width: calc(100% - 1rem);
+    max-width: 20rem;
+    padding: 0.75rem;
   }
 
   .hero__strip-label {
     width: 100%;
     text-align: center;
-    padding: 0.25rem 0 0.15rem;
+    padding: 0.25rem 0 0.5rem;
+  }
+
+  .hero__strip-item {
+    justify-content: center;
+    padding: 0.65rem 1rem;
   }
 
   .about__stage {
@@ -1783,6 +1870,17 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   backdrop-filter: blur(6px);
+}
+
+.cat-item__tags-hint {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
 }
 
 .cat-item__cta {
@@ -2541,8 +2639,46 @@ ul {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --nav-height: 4.25rem;
+  }
+
+  .contact {
+    padding: clamp(3rem, 8vw, 5rem) 1rem;
+  }
+
+  .contact__grid {
+    gap: 2rem;
+  }
+
+  .contact__form {
+    padding: 1.25rem;
+  }
+
   .contact__form-row {
     grid-template-columns: 1fr;
+  }
+
+  .cta-banner__title {
+    font-size: 1.25rem;
+  }
+
+  .cta-banner__btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about__cta-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about__cta {
+    justify-content: center;
+  }
+
+  .about__photo-card {
+    width: 100%;
   }
 
   .footer__grid {
@@ -2552,6 +2688,19 @@ ul {
   .footer__bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.75rem;
+  }
+
+  .footer__legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .whatsapp-fab {
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 }
 
