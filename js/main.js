@@ -196,8 +196,7 @@
       id: "asia",
       name: "Asia",
       desc: "Templos milenarios, gastronomía de clase mundial y metrópolis futuristas en un solo continente.",
-      image:
-        "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/carrusel/Asia.jpg",
       tags: ["Japón", "China", "Tailandia", "Bali"],
       cta: "Consultar viajes a Asia",
     },
