@@ -262,6 +262,15 @@
 
   const accordion = document.getElementById("categories-accordion");
 
+  const WHATSAPP_NUMBER = "5493513677000";
+
+  function buildWhatsAppLink(cat) {
+    const message =
+      `¡Hola Luxentia! 👋 Me interesa la categoría *${cat.name}*. ` +
+      `Me gustaría recibir asesoramiento personalizado para mi próximo viaje. ¿Me ayudan?`;
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  }
+
   function renderAccordion() {
     if (!accordion) return;
 
@@ -325,7 +334,9 @@
 
       const cta = document.createElement("a");
       cta.className = "cat-item__cta";
-      cta.href = "#contacto";
+      cta.href = buildWhatsAppLink(cat);
+      cta.target = "_blank";
+      cta.rel = "noopener noreferrer";
       cta.append(cat.cta, " ");
       const arrow = document.createElement("span");
       arrow.setAttribute("aria-hidden", "true");
